@@ -1,13 +1,17 @@
-DeletingStyle();
-FormatingRecords();
-DeletingRecords();
+document.onload = formating();
+	
+function formating(){
+	deletingStyle();	/*Deleting Default Exported Styles*/
+	formatingRecords();		/*Filter & Formating HTML*/
+	deletingRecords();		/*Deleting HTML Tags*/
+	}
 
-  function DeletingStyle(){
-    var tmp = document.getElementsByTagName('style');
-    tmp[0].innerHTML = '';
-  }
+function deletingStyle(){
+	var tmp = document.getElementsByTagName('style');
+	tmp[0].innerHTML = '';
+}
 
-  function FormatingRecords(){
+function formatingRecords(){
     var arr = document.getElementsByTagName('tr');
     var del = 0;
     arr[0].style.backgroundColor = '#C4C4C4'; /*gray color*/
@@ -25,14 +29,12 @@ DeletingRecords();
   }
 }
 
-  function DeletingRecords(){
-    var arr = document.getElementsByTagName('tr');
-    for (var i = 0; i < arr.length; i++){
-      if (arr[i].hasAttribute('style')){
-        arr[i].style.display = '';
-        }
-        else { 
-          arr[i].style.display = 'none';
-      }
-    }
-  }
+function deletingRecords(){
+	var arr = document.getElementsByTagName('tr');
+	for (var i = 0; i < arr.length; i++){
+	  if (arr[i].hasAttribute('style'))
+	    arr[i].style.display = '';
+	    else
+	      arr[i].style.display = 'none';
+	}
+}
